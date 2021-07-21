@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc && cp index.html dist/index.html",
-    "start": "yarn build && nodemon server.js"
+    "start": "nodemon server.js"
   },
   "devDependencies": {
     "mime": "2.5.2",
