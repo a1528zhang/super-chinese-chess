@@ -1,4 +1,4 @@
-import {createCheckerBoard} from "./CheckerBoard/index";
+import {createCheckerBoard} from "./CheckerBoard/index.js";
 
 const container = document.getElementById("super-chinese-chess-container");
-createCheckerBoard(container, 1000);
+createCheckerBoard(container, 200);

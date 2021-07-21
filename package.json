@@ -1,0 +1,16 @@
+{
+  "name": "super-chinese-chess",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:a1528zhang/super-chinese-chess.git",
+  "author": "az <beingszhang@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc && cp index.html dist/index.html",
+    "start": "yarn build && nodemon server.js"
+  },
+  "devDependencies": {
+    "mime": "2.5.2",
+    "nodemon": "2.0.12"
+  }
+}
