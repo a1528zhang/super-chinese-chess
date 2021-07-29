@@ -1,5 +1,3 @@
-import {ChessmanType} from "./ChessmanType.js";
-
 export const enemyChessmanInitPosition: {
     [chessmanType: string]: number[][],
 } = {

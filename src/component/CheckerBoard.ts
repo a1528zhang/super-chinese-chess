@@ -1,4 +1,7 @@
+import { enemyChessmanInitPosition, selfChessmanInitPosition } from "../rule/ChessmanInitPosition.js";
+import { ChessmanProp, enemyChessmanProp } from "../rule/ChessmanType.js";
 import { CheckerBoardGrid } from "./CheckerBoardGrid.js";
+import { Chessman } from "./Chessman.js";
 
 export type BoardProportion = {
     column: number;
@@ -15,10 +18,12 @@ export class CheckerBoard {
     height: number;
     color: string = "#ECC6A0";
     checkerBoardGrids: CheckerBoardGrid[][] = [];
+    gridHeight: number;
 
     constructor(container: HTMLElement, boardProportion: BoardProportion, height: number) {
         const checkerBoard = document.createElement("div");
         const width = height * boardProportion.column / boardProportion.row;
+        this.gridHeight = height / boardProportion.row;
 
         checkerBoard.style.width = `${width}px`;
         checkerBoard.style.height = `${height}px`;
@@ -35,10 +40,9 @@ export class CheckerBoard {
     }
 
     createCheckerBoardGrid(boardProportion: BoardProportion) {
-        const gridHeight = this.height / boardProportion.row;
         for (let row = 0; row < boardProportion.row; row++) {
             for (let column = 0; column < boardProportion.column; column++) {
-                const grid = new CheckerBoardGrid({row, column}, gridHeight, this.color);
+                const grid = new CheckerBoardGrid({row, column}, this.gridHeight, this.color);
                 this.append(row, column, grid);
             }
         }
@@ -69,7 +73,14 @@ export class CheckerBoard {
     }
 
     public initGame() {
-         
+        for(const type in enemyChessmanInitPosition) {
+            const positions = enemyChessmanInitPosition[type];
+            positions.forEach(position => {
+                const prop: ChessmanProp = enemyChessmanProp[type];
+                new Chessman(prop, this.gridHeight, this.checkerBoardGrids[position[0]][position[1]]);
+            })
+        }
+        selfChessmanInitPosition
     }
 
     public destory(): void {
