@@ -14,7 +14,7 @@ export class CheckerBoard {
     checkerBoardRef: HTMLDivElement;
     height: number;
     color: string = "#ECC6A0";
-    checkerBoardGrids: CheckerBoardGrid[][];
+    checkerBoardGrids: CheckerBoardGrid[][] = [];
 
     constructor(container: HTMLElement, boardProportion: BoardProportion, height: number) {
         const checkerBoard = document.createElement("div");
@@ -59,7 +59,17 @@ export class CheckerBoard {
 
     private append(row: number, column: number, grid: CheckerBoardGrid) {
         this.checkerBoardRef.appendChild(grid.checkerBoardGridRef);
-        this.checkerBoardGrids[row][column] = grid;
+        if (!this.checkerBoardGrids) {
+            this.checkerBoardGrids = [[grid]];
+        } else if (!this.checkerBoardGrids[row]) {
+            this.checkerBoardGrids[row] = [grid];
+        } else {
+            this.checkerBoardGrids[row][column] = grid;
+        }
+    }
+
+    public initGame() {
+         
     }
 
     public destory(): void {
