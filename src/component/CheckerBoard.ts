@@ -1,5 +1,5 @@
 import { enemyChessmanInitPosition, selfChessmanInitPosition } from "../rule/ChessmanInitPosition.js";
-import { ChessmanProp, enemyChessmanProp } from "../rule/ChessmanType.js";
+import { ChessmanProp, enemyChessmanProp,selfChessmanProp } from "../rule/ChessmanType.js";
 import { CheckerBoardGrid } from "./CheckerBoardGrid.js";
 import { Chessman } from "./Chessman.js";
 
@@ -37,6 +37,8 @@ export class CheckerBoard {
         this.height = height;
 
         this.createCheckerBoardGrid(boardProportion);
+
+        this.initGame();
     }
 
     createCheckerBoardGrid(boardProportion: BoardProportion) {
@@ -73,6 +75,7 @@ export class CheckerBoard {
     }
 
     public initGame() {
+        // 重置棋子
         for(const type in enemyChessmanInitPosition) {
             const positions = enemyChessmanInitPosition[type];
             positions.forEach(position => {
@@ -80,7 +83,17 @@ export class CheckerBoard {
                 new Chessman(prop, this.gridHeight, this.checkerBoardGrids[position[0]][position[1]]);
             })
         }
-        selfChessmanInitPosition
+        for(const type in selfChessmanInitPosition) {
+            const positions = selfChessmanInitPosition[type];
+            positions.forEach(position => {
+                const prop: ChessmanProp = selfChessmanProp[type];
+                new Chessman(prop, this.gridHeight, this.checkerBoardGrids[position[0]][position[1]]);
+            })
+        }
+        // 初始化指针事件
+        this.checkerBoardRef.onmousemove = (event: MouseEvent) => {
+            
+        }
     }
 
     public destory(): void {

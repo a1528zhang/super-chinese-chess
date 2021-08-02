@@ -52,8 +52,8 @@ export class CheckerBoardGrid {
 
     }
 
-    append(container: HTMLDivElement){
-        // container.appendChild(this.checkerBoardGridRef);
+    append(child: HTMLDivElement){
+        this.checkerBoardGridRef.appendChild(child);
     }
  
     public destory() {

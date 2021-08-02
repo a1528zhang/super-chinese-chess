@@ -75,7 +75,7 @@ export const enemyChessmanProp: {[chessmanType: string]: ChessmanProp} = {
     },
 }
 
-export const selfChessmanProp = {
+export const selfChessmanProp: {[chessmanType: string]: ChessmanProp} = {
     "Soldier": {
         type: ChessmanType.Soldier,
         image: "",
