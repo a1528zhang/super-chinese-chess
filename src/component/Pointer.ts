@@ -1,5 +1,5 @@
 import { Coordinate } from "./CheckerBoard.js";
-import { Chessman } from "./Chessman.js";
+import { Chessman } from "./Chessman.js"; 
 
 class Pointer {
     private chessman: Chessman | undefined;
