@@ -1,6 +1,7 @@
-import { AttackProp } from "../rule/AttackType.js";
-import { ChessmanProp } from "../rule/ChessmanType.js";
-import { CheckerBoardGrid } from "./CheckerBoardGrid.js";
+import type { AttackProp } from "../rule/AttackType.js";
+import type { ChessmanProp } from "../rule/ChessmanType.js";
+import type { CheckerBoardGrid } from "./CheckerBoardGrid.js";
+import type Pointer from "./Pointer.js";
 
 type ChessmanStyle = {
     width: number;
@@ -15,15 +16,18 @@ type ChessmanStyle = {
     alt: string;
 }
 export class Chessman {
+
     public chessmanRef: HTMLDivElement;
     public chessmanPhantomRef: HTMLDivElement;
-    private chessmanProp: ChessmanProp;
+    public chessmanProp: ChessmanProp;
     private checkerBoardGrid: CheckerBoardGrid;
-    private selected: boolean = false;
+    private selected = false;
     private style: ChessmanStyle;
+    private pointer: Pointer;
 
-    constructor(props: ChessmanProp, size: number, checkerBoardGrid: CheckerBoardGrid) {
+    constructor(props: ChessmanProp, size: number, checkerBoardGrid: CheckerBoardGrid, pointer: Pointer) {
         this.chessmanProp = props;
+        this.pointer = pointer;
         const chessman = document.createElement("div");
         const phantomChessman = document.createElement("div");
         this.style = {
@@ -67,24 +71,25 @@ export class Chessman {
     moveTo(target: CheckerBoardGrid): boolean {
         return true;
     }
-    bindListener() {
+    bindListener(): void {
         this.chessmanRef.onclick = this.onclick;
     }
 
-    onclick = (ev: MouseEvent): any => {
+    onclick = (ev: MouseEvent): void => {
         this.selected = !this.selected;
         this.bindToPointer();
     }
 
     bindToPointer(): void {
-
-    };
+        this.pointer.bindChessman(this);
+    }
     
-    onClickUp() {
+    onClickUp(): void {
         
     }
     
-    destory() {
+    destory(): void {
 
     }
+
 }

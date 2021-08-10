@@ -8,12 +8,14 @@ export type Coordinate2D = {
 }
 
 export class CheckerBoard {
+
     private checkerBoardType: CheckerBoardType;
     private height: number;
     private width: number;
 
     constructor () {}
-    public init() {}
-    public reset() {}
-    public destory () {}
+    public init(): void {}
+    public reset(): void {}
+    public destory(): void {}
+
 }

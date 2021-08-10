@@ -10,6 +10,6 @@ const standardBoardProportion: BoardProportion = {
     row: 10,
 }
 
-export function createCheckerBoard(container: HTMLElement, height: number) {
+export function createCheckerBoard(container: HTMLElement, height: number): void {
     new CheckerBoard(container, standardBoardProportion, height);
 }

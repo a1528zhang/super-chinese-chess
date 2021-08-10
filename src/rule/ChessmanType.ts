@@ -51,11 +51,11 @@ export const enemyChessmanProp: {[chessmanType: string]: ChessmanProp} = {
         }
     },
     "Elephant": {type: ChessmanType.Cavalry,
-        image: "",
-        health: 10,
-        style: {
-            alt: "象"
-        }
+                 image: "",
+                 health: 10,
+                 style: {
+                     alt: "象"
+                 }
     },
     "Guard": {
         type: ChessmanType.Guard,
@@ -109,11 +109,11 @@ export const selfChessmanProp: {[chessmanType: string]: ChessmanProp} = {
         }
     },
     "Elephant": {type: ChessmanType.Cavalry,
-        image: "",
-        health: 10,
-        style: {
-            alt: "相"
-        }
+                 image: "",
+                 health: 10,
+                 style: {
+                     alt: "相"
+                 }
     },
     "Guard": {
         type: ChessmanType.Guard,

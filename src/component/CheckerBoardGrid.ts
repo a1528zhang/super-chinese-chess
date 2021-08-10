@@ -1,8 +1,9 @@
-import { Coordinate } from "./CheckerBoard.js";
-import { Chessman } from "./Chessman.js"; 
+import type { Coordinate } from "./CheckerBoard.js";
+import type { Chessman } from "./Chessman.js"; 
 
 // 格子是正方形，只需要 size 参数
 export class CheckerBoardGrid {
+
     checkerBoardGridRef: HTMLDivElement   
     ;
     color: string;
@@ -31,17 +32,17 @@ export class CheckerBoardGrid {
         return this.coordinate;
     }
 
-    onPointerOver() {
+    onPointerOver(): void {
         this.checkerBoardGridRef.style.background = "#FFFFFF";
     }
-    onPointerLeave() {
+    onPointerLeave(): void {
         this.checkerBoardGridRef.style.background = this.color;
     }
 
-    onChessmanIn() {
+    onChessmanIn(): void {
 
     }
-    onChessmanout() {
+    onChessmanout(): void {
         
     }
 
@@ -49,15 +50,16 @@ export class CheckerBoardGrid {
      * 获取相邻 grid 的位置
      * 参数 maxX 代表 列的最大偏移，maxY 代表行的最大偏移
      */
-    getRelativeGridPosition(relativeCoordinate: { maxX: number, maxY: number}) {
+    getRelativeGridPosition(relativeCoordinate: { maxX: number, maxY: number}): void {
 
     }
 
-    append(child: HTMLDivElement){
+    append(child: HTMLDivElement): void {
         this.checkerBoardGridRef.appendChild(child);
     }
  
-    public destory() {
+    public destory(): void {
         
     }
+
 }

@@ -94,22 +94,6 @@ module.exports = {
         "import/no-cycle": [
             "off"
         ],
-        "react/jsx-indent": [
-            "error",
-            4
-        ],
-        "react/react-in-jsx-scope": [
-            "off"
-        ],
-        "react/jsx-first-prop-new-line": [
-            "off"
-        ],
-        "react/no-array-index-key": [
-            "off"
-        ],
-        "react/static-property-placement": [
-            "off"
-        ],
         "class-methods-use-this": [
             "off"
         ],
@@ -151,14 +135,6 @@ module.exports = {
         ],
         "object-curly-newline": [
             "off"
-        ],
-        "react/jsx-indent-props": [
-            "error",
-            "first"
-        ],
-        "react/jsx-closing-bracket-location": [
-            "error",
-            "after-props"
         ],
         "@typescript-eslint/quotes": [
             "error",
