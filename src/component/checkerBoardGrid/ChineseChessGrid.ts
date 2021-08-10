@@ -26,7 +26,7 @@ export class ChineseChessGrid extends CheckerBoardGrid {
     public getCodinate(): void {
         throw new Error("Method not implemented.");
     }
-    public getRelativeGridPosition(relativeCoordinate: Coordinate): void {
+    public getRelativeCoordinate(relativeCoordinate: Coordinate): Coordinate[] {
         throw new Error("Method not implemented.");
     }
     public destory(): void {

@@ -22,11 +22,11 @@ export abstract class CheckerBoardGrid {
     public abstract onPointerLeave(): void;
     public abstract getCodinate(): void;
     /**
-     * 获取相邻 grid 的位置
+     * 获取相邻坐标
      * 参数 relativeCoordinate 代表对应 x,y,z 三轴上的最大偏移量
      * 比如{0,0,1},代表 x,y 轴就是当前坐标，z 轴可以取 +- 1 的值
      */
-    public abstract getRelativeGridPosition(relativeCoordinate: Coordinate): void;
+    public abstract getRelativeCoordinate(relativeCoordinate: Coordinate): Coordinate[];
     public abstract destory(): void;
     public abstract render(): void;
 
