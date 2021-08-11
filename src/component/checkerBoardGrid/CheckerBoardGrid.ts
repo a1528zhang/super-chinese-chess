@@ -1,8 +1,12 @@
-import type { CheckerBoardType, Coordinate} from "../checkerBoard/CheckerBoard.js";
+import type { CheckerBoardType } from "../checkerBoard/CheckerBoard.js";
+import type { Coordinate } from "../coordinate/CoordinateSystem.js";
 
 /**
- * 棋盘格，可以点击，选择器悬浮
+ * 棋盘格，可以点击，可以 hover
  * 棋盘格内可以有多个棋子，棋盘格本身有形状属性，根据游戏种类不同形状不同
+ * 棋盘格带有地形砖块的作用
+ * 合理设计是棋盘格与地形砖块隔离，目前可以合并。
+ * 棋盘格本身无法移动，但是地形砖块可以。目前设计无法移动
  */
 export abstract class CheckerBoardGrid {
 
@@ -24,6 +28,8 @@ export abstract class CheckerBoardGrid {
      */
     public abstract getRelativeGridPosition(relativeCoordinate: Coordinate): void;
     public abstract destory(): void;
+    public abstract render(): void;
+
     public getPosition(): Coordinate {
         return this.coordinate;
     }

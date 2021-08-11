@@ -1,21 +1,19 @@
 export enum CheckerBoardType {
     ChineseChess,
 }
-// 坐标以左上角为准，左上角为 0，0，向右和向下增加
-export type Coordinate2D = Coordinate;
-// 坐标以最底层为准，最底层为 0，向上增加
-export type Coordinate3D = Coordinate & {
-    z: number;
-}
 
-export type Coordinate = {
-    x: number;  // 列
-    y: number;  // 行
-};
+export enum ComponentType {
+    CheckerBoard,
+    CheckerBoardGrid,
+    Chessman,
+    Selector,
+    User,
+}
 
 /**
  * 棋盘，承载棋盘格，可以重置棋盘格
  * 限制选择器只能在棋盘范围内生效
+ * 棋盘坐标以第一个进入游戏的玩家进行定位，其余玩家要经过坐标换算来保证自己的棋子里自己最近
  */
 export class CheckerBoard {
 
@@ -25,6 +23,7 @@ export class CheckerBoard {
 
     constructor () {}
     public init(): void {}
+    public render(): void {}
     public reset(): void {}
     public destory(): void {}
 

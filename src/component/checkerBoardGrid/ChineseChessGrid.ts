@@ -1,5 +1,5 @@
-import type { Coordinate, Coordinate2D } from "../checkerBoard/CheckerBoard.js";
 import { CheckerBoardType } from "../checkerBoard/CheckerBoard.js";
+import type { Coordinate, Coordinate2D } from "../coordinate/CoordinateSystem.js";
 import { CheckerBoardGrid } from "./CheckerBoardGrid.js";
 
 export class ChineseChessGrid extends CheckerBoardGrid {
@@ -7,6 +7,9 @@ export class ChineseChessGrid extends CheckerBoardGrid {
     public coordinate: Coordinate2D;
     constructor() {
         super(CheckerBoardType.ChineseChess);
+    }
+    public render(): void {
+        throw new Error("Method not implemented.");
     }
     public init(): void {
 
