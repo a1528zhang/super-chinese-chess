@@ -1,5 +1,5 @@
-import type { CheckerBoardGrid } from "../CheckerBoardGrid.js";
-import type { Chessman } from "../chessman/Chessman.js";
+import type { CheckerBoardGrid } from "../component/CheckerBoardGrid.js";
+import type { Chessman } from "../component/chessman/Chessman.js";
 
 /**
  * 棋盘管理器
@@ -14,7 +14,6 @@ class BoardManager {
     constructor() {}
     public reset(): void {}
     public onEvent(): void {}
-    
 
 }
 

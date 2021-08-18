@@ -1,5 +1,5 @@
-import type { Coordinate } from "../checkerBoard/CheckerBoard.js";
-import type { Chessman } from "../chessman/Chessman.js";
+import type { Chessman } from "../component/chessman/Chessman.js";
+import type { Coordinate } from "../component/coordinate/CoordinateSystem.js";
 
 /**
  * 选择器，可以点击棋盘格或是棋子
