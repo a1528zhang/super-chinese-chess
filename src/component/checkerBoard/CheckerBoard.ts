@@ -10,6 +10,12 @@ export enum ComponentType {
     User,
 }
 
+export type CheckerBoardProps = {
+    checkerBoardType: CheckerBoardType;
+    height: number;
+    width: number;
+}
+
 /**
  * 棋盘，承载棋盘格，可以重置棋盘格
  * 限制选择器只能在棋盘范围内生效
@@ -17,9 +23,7 @@ export enum ComponentType {
  */
 export class CheckerBoard {
 
-    private checkerBoardType: CheckerBoardType;
-    private height: number;
-    private width: number;
+    private props: CheckerBoardProps;
 
     constructor () {}
     public init(): void {}

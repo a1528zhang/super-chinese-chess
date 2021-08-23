@@ -16,8 +16,8 @@ export type Coordinate = {
  */
 export abstract class CoordinateSystem {
 
-    // 坐标变换参数
-    private transformationParams;
+    // 坐标变换规则，不同棋盘需要不同实现
+    coordinatTransform: (orign: Coordinate) => Coordinate;
     constructor() {}
     reset(): void {}
 
