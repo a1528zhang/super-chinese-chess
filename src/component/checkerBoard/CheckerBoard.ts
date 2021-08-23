@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 export enum CheckerBoardType {
     ChineseChess,
 }
@@ -16,19 +18,32 @@ export type CheckerBoardProps = {
     width: number;
 }
 
+export type BoardProportion = {
+    column: number;
+    row: number;
+}
+
 /**
  * 棋盘，承载棋盘格，可以重置棋盘格
  * 限制选择器只能在棋盘范围内生效
  * 棋盘坐标以第一个进入游戏的玩家进行定位，其余玩家要经过坐标换算来保证自己的棋子里自己最近
  */
-export class CheckerBoard {
+export abstract class CheckerBoard {
 
-    private props: CheckerBoardProps;
+    uuid: string;
+    height: number;
+    width: number;
+    props: CheckerBoardProps;
+    checkerBoardRef: HTMLDivElement;
 
-    constructor () {}
-    public init(): void {}
-    public render(): void {}
-    public reset(): void {}
-    public destory(): void {}
+    constructor (height: number, backgroundColor: string, boardProportion: BoardProportion) {
+        // 生成 uuid
+        this.uuid = uuidv4();
+        this.render(height, backgroundColor, boardProportion);
+    }
+    public abstract init(): void;
+    public abstract reset(): void;
+    public abstract destory(): void;
+    public abstract render(height: number, backgroundColor: string, boardProportion: BoardProportion): void;
 
 }
