@@ -1,5 +1,5 @@
-import type { BoardProportion} from "./CheckerBoard";
-import { CheckerBoard } from "./CheckerBoard";
+import type { BoardProportion} from "./CheckerBoard.js";
+import { CheckerBoard } from "./CheckerBoard.js";
 
 export class ChineseChessBoard extends CheckerBoard {
 
@@ -12,8 +12,7 @@ export class ChineseChessBoard extends CheckerBoard {
     public destory(): void {
         throw new Error("Method not implemented.");
     }
-    public render(height: number, backgroundColor: string, boardProportion: BoardProportion): void {
-        const container = document.getElementById("root");
+    public render(height: number, backgroundColor: string, boardProportion: BoardProportion, container: HTMLDivElement): void {
         const checkerBoard = document.createElement("div");
         const width = height * boardProportion.column / boardProportion.row;
 

@@ -11,6 +11,7 @@ export class ChineseChessCoordinateSystem extends CoordinateSystem {
                 return {
                     x: boardPorps.width - origin.x - 1,
                     y: boardPorps.height - origin.y -1,
+                    z: 1,
                 }
             }
         }

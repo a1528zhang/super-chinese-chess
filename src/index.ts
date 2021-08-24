@@ -1,4 +1,4 @@
-import {createCheckerBoard} from "./component/index.js";
+import { ChineseChessBoardManager } from "./state/ChineseChessBoardManager.js";
 
-const container = document.getElementById("super-chinese-chess-container");
-createCheckerBoard(container, 400);
+const root = document.getElementById("root");
+new ChineseChessBoardManager(root as HTMLDivElement);

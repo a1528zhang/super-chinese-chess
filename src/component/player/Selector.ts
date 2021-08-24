@@ -4,6 +4,7 @@ import type { Coordinate } from "../coordinate/CoordinateSystem.js";
 /**
  * 选择器，可以点击棋盘格或是棋子, hover 显示详情, 需要对移动设备进行兼容
  * 移动通过拖动实现，点击为选择事件
+ * TODO 每种类型的棋盘需要做一个选择器，待抽象
  */
 export default class Selector {
 
@@ -47,6 +48,7 @@ export default class Selector {
         this.coordinate = {
             x: column,
             y: row,
+            z: 1
         }
     }
 

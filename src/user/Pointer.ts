@@ -4,7 +4,7 @@ import type { Coordinate } from "../component/coordinate/CoordinateSystem.js";
 /**
  * 选择器，可以点击棋盘格或是棋子
  * 提供绑定事件
- * 
+ * TODO 
  */
 export default class Selector {
 
@@ -32,9 +32,11 @@ export default class Selector {
         } else {
             column = Math.floor(pointerX / grideSize);
         }
+        // TODO z 待修改
         this.coordinate = {
             x: column,
             y: row,
+            z: 1,
         }
     }
 

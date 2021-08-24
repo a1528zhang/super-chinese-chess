@@ -36,14 +36,14 @@ export abstract class CheckerBoard {
     props: CheckerBoardProps;
     checkerBoardRef: HTMLDivElement;
 
-    constructor (height: number, backgroundColor: string, boardProportion: BoardProportion) {
+    constructor (height: number, backgroundColor: string, boardProportion: BoardProportion, container: HTMLDivElement) {
         // 生成 uuid
         this.uuid = uuidv4();
-        this.render(height, backgroundColor, boardProportion);
+        this.render(height, backgroundColor, boardProportion, container);
     }
     public abstract init(): void;
     public abstract reset(): void;
     public abstract destory(): void;
-    public abstract render(height: number, backgroundColor: string, boardProportion: BoardProportion): void;
+    public abstract render(height: number, backgroundColor: string, boardProportion: BoardProportion, container: HTMLDivElement): void;
 
 }

@@ -1,13 +1,8 @@
-// 坐标以左上角为准，左上角为 0，0，向右和向下增加
-export type Coordinate2D = Coordinate;
-// 坐标以最底层为准，最底层为 0，向上增加
-export type Coordinate3D = Coordinate & {
-    z: number;
-}
-
+// 坐标三维，平面棋盘的 z 永远为 1
 export type Coordinate = {
     x: number;  // 列
     y: number;  // 行
+    z: number;  // 排
 };
 
 /**

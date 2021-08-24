@@ -4,8 +4,7 @@ import type { Chessman } from "./Chessman.js";
 // 格子是正方形，只需要 size 参数
 export class CheckerBoardGrid {
 
-    checkerBoardGridRef: HTMLDivElement   
-    ;
+    checkerBoardGridRef: HTMLDivElement;
     color: string;
     chessman: Chessman;
     coordinate: Coordinate;

@@ -1,12 +1,23 @@
-import type { CheckerBoard } from "../component/checkerBoard/CheckerBoard";
-import { ChineseChessBoard } from "../component/checkerBoard/ChineseChessBoard";
-import { backgroundColor, boardHeight, standardBoardProportion } from "../config/SuperChineseChess";
-import { BoardManager } from "./BoardManager";
+import type { CheckerBoard } from "../component/checkerBoard/CheckerBoard.js";
+import { ChineseChessBoard } from "../component/checkerBoard/ChineseChessBoard.js";
+import { backgroundColor, boardHeight, standardBoardProportion } from "../config/SuperChineseChess.js";
+import { BoardManager } from "./BoardManager.js";
 
 export class ChineseChessBoardManager extends BoardManager {
 
-    public createCheckerBoard(): CheckerBoard {
-        return new ChineseChessBoard(boardHeight, backgroundColor,  standardBoardProportion);
+    public createCheckerBoard(container: HTMLDivElement): void {
+        this.checkerBoard = new ChineseChessBoard(boardHeight, backgroundColor, standardBoardProportion, container);
+    }
+
+    public createCheckerBoardGrids(): void {
+        throw new Error("Method not implemented.");
+    }
+    public createChessmans(): void {
+        throw new Error("Method not implemented.");
+    }
+
+    public createCheckerGrid(): CheckerBoard {
+        throw new Error("Method not implemented.");
     }
 
     public reset(): void {

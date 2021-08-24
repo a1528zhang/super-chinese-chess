@@ -1,10 +1,10 @@
 import { CheckerBoardType } from "../checkerBoard/CheckerBoard.js";
-import type { Coordinate, Coordinate2D } from "../coordinate/CoordinateSystem.js";
+import type { Coordinate } from "../coordinate/CoordinateSystem.js";
 import { CheckerBoardGrid } from "./CheckerBoardGrid.js";
 
 export class ChineseChessGrid extends CheckerBoardGrid {
 
-    public coordinate: Coordinate2D;
+    public coordinate: Coordinate;
     constructor() {
         super(CheckerBoardType.ChineseChess);
     }
