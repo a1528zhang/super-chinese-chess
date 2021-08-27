@@ -1,5 +1,13 @@
-import type { CheckerBoardType } from "../checkerBoard/CheckerBoard.js";
-import type { Coordinate } from "../coordinate/CoordinateSystem.js";
+import type { CheckerBoard, CheckerBoardType } from "../checkerBoard/CheckerBoard";
+import type { Coordinate } from "../coordinate/CoordinateSystem";
+import { v4 as uuidv4 } from "uuid";
+
+export type CheckerBoardGridProps = {
+    height: number;
+    width: number;
+    coordinate: Coordinate;
+    backgroundColor: string;
+}
 
 /**
  * 棋盘格，可以点击，可以 hover
@@ -10,11 +18,16 @@ import type { Coordinate } from "../coordinate/CoordinateSystem.js";
  */
 export abstract class CheckerBoardGrid {
 
+    checkerBoard: CheckerBoard;
+    uuid: string;
+    props: CheckerBoardGridProps;
     coordinate: Coordinate;
     private checkerBoardType: CheckerBoardType;
 
-    constructor(checkerBoardType: CheckerBoardType) {
-        this.checkerBoardType = checkerBoardType;
+    constructor(props: CheckerBoardGridProps, container: CheckerBoard) {
+        this.uuid = uuidv4();
+        this.props = props;
+        this.render(container);
     }
     public abstract init(): void;
     public abstract onClick(): void;
@@ -28,7 +41,7 @@ export abstract class CheckerBoardGrid {
      */
     public abstract getRelativeCoordinate(relativeCoordinate: Coordinate): Coordinate[];
     public abstract destory(): void;
-    public abstract render(): void;
+    public abstract render(container: CheckerBoard): void;
 
     public getPosition(): Coordinate {
         return this.coordinate;

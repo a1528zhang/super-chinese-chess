@@ -16,6 +16,8 @@ export type CheckerBoardProps = {
     checkerBoardType: CheckerBoardType;
     height: number;
     width: number;
+    boardProportion: BoardProportion;
+    backgroundColor: string;
 }
 
 export type BoardProportion = {
@@ -31,19 +33,18 @@ export type BoardProportion = {
 export abstract class CheckerBoard {
 
     uuid: string;
-    height: number;
-    width: number;
     props: CheckerBoardProps;
     checkerBoardRef: HTMLDivElement;
 
-    constructor (height: number, backgroundColor: string, boardProportion: BoardProportion, container: HTMLDivElement) {
+    constructor (props: CheckerBoardProps, container: HTMLDivElement) {
         // 生成 uuid
         this.uuid = uuidv4();
-        this.render(height, backgroundColor, boardProportion, container);
+        this.props = props;
+        this.render(props, container);
     }
     public abstract init(): void;
     public abstract reset(): void;
     public abstract destory(): void;
-    public abstract render(height: number, backgroundColor: string, boardProportion: BoardProportion, container: HTMLDivElement): void;
+    public abstract render(props: CheckerBoardProps, container: HTMLDivElement): void;
 
 }

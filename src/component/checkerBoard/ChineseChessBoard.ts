@@ -1,4 +1,4 @@
-import type { BoardProportion} from "./CheckerBoard.js";
+import type { BoardProportion, CheckerBoardProps} from "./CheckerBoard.js";
 import { CheckerBoard } from "./CheckerBoard.js";
 
 export class ChineseChessBoard extends CheckerBoard {
@@ -12,9 +12,9 @@ export class ChineseChessBoard extends CheckerBoard {
     public destory(): void {
         throw new Error("Method not implemented.");
     }
-    public render(height: number, backgroundColor: string, boardProportion: BoardProportion, container: HTMLDivElement): void {
+    public render(props: CheckerBoardProps, container: HTMLDivElement): void {
         const checkerBoard = document.createElement("div");
-        const width = height * boardProportion.column / boardProportion.row;
+        const {height, width, backgroundColor} = props;
 
         checkerBoard.style.width = `${width}px`;
         checkerBoard.style.height = `${height}px`;
@@ -25,8 +25,6 @@ export class ChineseChessBoard extends CheckerBoard {
         container.appendChild(checkerBoard);
         
         this.checkerBoardRef = checkerBoard;
-        this.height = height;
-        this.width = width;
     }
 
 }

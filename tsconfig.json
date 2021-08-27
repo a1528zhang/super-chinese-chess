@@ -1,11 +1,13 @@
 {
     "compilerOptions": {
-        "module": "ES6",
+        "target": "ESNext",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "module": "ESNext",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
         "outDir": "dist"
     },
-    "include": ["src/**/*"]
+    "include": ["./src"]
 }

@@ -1,14 +1,14 @@
-import { CheckerBoardType } from "../checkerBoard/CheckerBoard.js";
-import type { Coordinate } from "../coordinate/CoordinateSystem.js";
-import { CheckerBoardGrid } from "./CheckerBoardGrid.js";
+import type { CheckerBoard} from "../checkerBoard/CheckerBoard";
+import type { Coordinate } from "../coordinate/CoordinateSystem";
+import type { CheckerBoardGridProps } from "./CheckerBoardGrid";
+import { CheckerBoardGrid } from "./CheckerBoardGrid";
 
 export class ChineseChessGrid extends CheckerBoardGrid {
 
-    public coordinate: Coordinate;
-    constructor() {
-        super(CheckerBoardType.ChineseChess);
+    constructor(props: CheckerBoardGridProps, container: CheckerBoard) {
+        super(props, container);
     }
-    public render(): void {
+    public render(container: CheckerBoard): void {
         throw new Error("Method not implemented.");
     }
     public init(): void {

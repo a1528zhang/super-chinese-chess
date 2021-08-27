@@ -3,7 +3,7 @@ import type { CheckerBoardGrid } from "../component/CheckerBoardGrid.js";
 import type { Chessman } from "../component/chessman/Chessman.js";
 
 // 全部棋盘格，3 维棋盘 x, y, z, 2 维棋盘 z 永远是 1
-type CheckerBoardGrids = CheckerBoardGrid[][][];
+export type CheckerBoardGrids = CheckerBoardGrid[][][];
 // 全部棋子
 type Chessmans = {
     [uuid: string]: Chessman
@@ -38,6 +38,7 @@ export abstract class BoardManager {
 
     constructor(container: HTMLDivElement) {
         this.createCheckerBoard(container);
+        this.createCheckerBoardGrids();
     }
     public abstract createCheckerBoard(container: HTMLDivElement): void;
     public abstract createCheckerBoardGrids(): void;
