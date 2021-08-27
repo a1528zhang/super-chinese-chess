@@ -1,7 +1,7 @@
-import type { AttackProp } from "../rule/AttackType.js";
-import type { ChessmanProp } from "../rule/ChessmanType.js";
-import type { CheckerBoardGrid } from "./CheckerBoardGrid.js";
-import type Pointer from "./Pointer.js";
+import type { AttackProp } from "../rule/AttackType";
+import type { ChessmanProp } from "../rule/ChessmanType";
+import type { CheckerBoardGrid } from "./CheckerBoardGrid";
+import type Pointer from "./Pointer";
 
 type ChessmanStyle = {
     width: number;

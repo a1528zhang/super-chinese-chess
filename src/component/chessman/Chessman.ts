@@ -1,5 +1,5 @@
-import type { CheckerBoardType } from "../checkerBoard/CheckerBoard.js";
-import type { Coordinate } from "../coordinate/CoordinateSystem.js";
+import type { CheckerBoardType } from "../checkerBoard/CheckerBoard";
+import type { Coordinate } from "../coordinate/CoordinateSystem";
 
 export type ChessmanProps = {
     coordinate: Coordinate;

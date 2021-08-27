@@ -1,5 +1,5 @@
-import type { CheckerBoard, Coordinate } from "./CheckerBoard.js";
-import type { Chessman } from "./Chessman.js";
+import type { CheckerBoard, Coordinate } from "./CheckerBoard";
+import type { Chessman } from "./Chessman";
 
 export default class Pointer {
 

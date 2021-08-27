@@ -1,4 +1,4 @@
-import type { ComponentType } from "../component/checkerBoard/CheckerBoard.js";
+import type { ComponentType } from "../component/checkerBoard/CheckerBoard";
 
 export enum MessageType {
     Reset = "Reset", // 棋盘重置

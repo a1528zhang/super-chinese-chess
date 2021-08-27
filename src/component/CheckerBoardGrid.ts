@@ -1,5 +1,5 @@
-import type { Coordinate } from "./CheckerBoard.js";
-import type { Chessman } from "./Chessman.js"; 
+import type { Coordinate } from "./CheckerBoard";
+import type { Chessman } from "./Chessman"; 
 
 // 格子是正方形，只需要 size 参数
 export class CheckerBoardGrid {

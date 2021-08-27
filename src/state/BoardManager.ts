@@ -1,6 +1,6 @@
-import type { CheckerBoard } from "../component/checkerBoard/CheckerBoard.js";
-import type { CheckerBoardGrid } from "../component/CheckerBoardGrid.js";
-import type { Chessman } from "../component/chessman/Chessman.js";
+import type { CheckerBoard } from "../component/checkerBoard/CheckerBoard";
+import type { CheckerBoardGrid } from "../component/CheckerBoardGrid";
+import type { Chessman } from "../component/chessman/Chessman";
 
 // 全部棋盘格，3 维棋盘 x, y, z, 2 维棋盘 z 永远是 1
 export type CheckerBoardGrids = CheckerBoardGrid[][][];

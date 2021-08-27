@@ -1,4 +1,4 @@
-import type { BoardManager } from "./BoardManager.js";
+import type { BoardManager } from "./BoardManager";
 
 export type State = {
 

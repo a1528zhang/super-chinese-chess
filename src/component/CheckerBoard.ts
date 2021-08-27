@@ -1,9 +1,9 @@
-import { enemyChessmanInitPosition, selfChessmanInitPosition } from "../rule/ChessmanInitPosition.js";
-import type { ChessmanProp} from "../rule/ChessmanType.js";
-import { enemyChessmanProp,selfChessmanProp } from "../rule/ChessmanType.js";
-import { CheckerBoardGrid } from "./CheckerBoardGrid.js";
-import { Chessman } from "./Chessman.js";
-import Pointer from "./Pointer.js";
+import { enemyChessmanInitPosition, selfChessmanInitPosition } from "../rule/ChessmanInitPosition";
+import type { ChessmanProp} from "../rule/ChessmanType";
+import { enemyChessmanProp,selfChessmanProp } from "../rule/ChessmanType";
+import { CheckerBoardGrid } from "./CheckerBoardGrid";
+import { Chessman } from "./Chessman";
+import Pointer from "./Pointer";
 
 export type BoardProportion = {
     column: number;

@@ -1,10 +1,10 @@
-import type { CheckerBoard} from "../component/checkerBoard/CheckerBoard.js";
-import { CheckerBoardType } from "../component/checkerBoard/CheckerBoard.js";
-import { ChineseChessBoard } from "../component/checkerBoard/ChineseChessBoard.js";
-import { ChineseChessGrid } from "../component/checkerBoardGrid/ChineseChessGrid.js";
-import { backgroundColor, gridColor, boardHeight, boardWidth, gridHeight, standardBoardProportion, gridWidth } from "../config/SuperChineseChess.js";
-import type { CheckerBoardGrids } from "./BoardManager.js";
-import { BoardManager } from "./BoardManager.js";
+import type { CheckerBoard} from "../component/checkerBoard/CheckerBoard";
+import { CheckerBoardType } from "../component/checkerBoard/CheckerBoard";
+import { ChineseChessBoard } from "../component/checkerBoard/ChineseChessBoard";
+import { ChineseChessGrid } from "../component/checkerBoardGrid/ChineseChessGrid";
+import { backgroundColor, gridColor, boardHeight, boardWidth, gridHeight, standardBoardProportion, gridWidth } from "../config/SuperChineseChess";
+import type { CheckerBoardGrids } from "./BoardManager";
+import { BoardManager } from "./BoardManager";
 
 export class ChineseChessBoardManager extends BoardManager {
 

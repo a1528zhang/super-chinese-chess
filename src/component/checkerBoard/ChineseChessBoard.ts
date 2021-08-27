@@ -1,5 +1,5 @@
-import type { BoardProportion, CheckerBoardProps} from "./CheckerBoard.js";
-import { CheckerBoard } from "./CheckerBoard.js";
+import type { BoardProportion, CheckerBoardProps} from "./CheckerBoard";
+import { CheckerBoard } from "./CheckerBoard";
 
 export class ChineseChessBoard extends CheckerBoard {
 

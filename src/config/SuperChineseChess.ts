@@ -1,4 +1,4 @@
-import type { BoardProportion } from "../component/checkerBoard/CheckerBoard.js";
+import type { BoardProportion } from "../component/checkerBoard/CheckerBoard";
 
 export const boardHeight = 400;
 export const standardBoardProportion: BoardProportion = {

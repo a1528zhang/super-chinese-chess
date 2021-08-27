@@ -1,5 +1,5 @@
-import type { Chessman } from "../chessman/Chessman.js";
-import type { Coordinate } from "../coordinate/CoordinateSystem.js";
+import type { Chessman } from "../chessman/Chessman";
+import type { Coordinate } from "../coordinate/CoordinateSystem";
 
 /**
  * 选择器，可以点击棋盘格或是棋子, hover 显示详情, 需要对移动设备进行兼容

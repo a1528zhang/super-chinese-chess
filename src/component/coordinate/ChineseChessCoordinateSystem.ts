@@ -1,5 +1,5 @@
-import type { CheckerBoardProps } from "../checkerBoard/CheckerBoard.js";
-import { CoordinateSystem } from "./CoordinateSystem.js";
+import type { CheckerBoardProps } from "../checkerBoard/CheckerBoard";
+import { CoordinateSystem } from "./CoordinateSystem";
 export class ChineseChessCoordinateSystem extends CoordinateSystem {
 
     constructor(isFirst: boolean, boardPorps: CheckerBoardProps) {
