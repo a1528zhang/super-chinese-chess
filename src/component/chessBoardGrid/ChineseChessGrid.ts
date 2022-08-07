@@ -10,14 +10,17 @@ export class ChineseChessGrid extends ChessBoardGrid {
     }
     public getFigure(props: ChessBoardGridProps): HTMLElement {
         const chessBoardGrid = document.createElement("div");
-        const {height, width, backgroundColor} = props;
+        const {height, width, backgroundColor, coordinate} = props;
+
+        chessBoardGrid.style.border = "solid";
+        chessBoardGrid.style.left = `${coordinate.x * width}px`;
+        chessBoardGrid.style.top = `${coordinate.y * height}px`;
 
         chessBoardGrid.style.width = `${width}px`;
         chessBoardGrid.style.height = `${height}px`;
         chessBoardGrid.style.background = backgroundColor;
         chessBoardGrid.style.display = "block";
-        // TODO 算位置
-        chessBoardGrid.style.position = "relative";
+        chessBoardGrid.style.position = "absolute";
         chessBoardGrid.className = "grid";
 
         return chessBoardGrid;
