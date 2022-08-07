@@ -1,4 +1,2 @@
-import { ChineseChessBoardManager } from "./state/ChineseChessBoardManager";
-
-const root = document.getElementById("root");
-new ChineseChessBoardManager(root as HTMLDivElement);
+export type { SuperChineseChessOption } from "./starter";
+export { SuperChineseChess } from "./starter";

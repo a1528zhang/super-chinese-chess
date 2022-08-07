@@ -1,4 +1,4 @@
-export const enemyChessmanInitPosition: {
+export const enemyChessmanPosition: {
     [chessmanType: string]: number[][],
 } = {
     "Soldier": [[3, 0], [3, 2], [3, 4], [3, 6],  [3, 8]],
@@ -10,7 +10,7 @@ export const enemyChessmanInitPosition: {
     "General": [[0, 4]],
 }
 
-export const selfChessmanInitPosition: {
+export const selfChessmanPosition: {
     [chessmanType: string]: number[][],
 } = {
     "Soldier": [[6, 0], [6, 2], [6, 4], [6, 6],  [6, 8]],

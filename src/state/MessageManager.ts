@@ -1,5 +1,3 @@
-import type { ComponentType } from "../component/checkerBoard/CheckerBoard";
-
 export enum MessageType {
     Reset = "Reset", // 棋盘重置
     Exchange = "Exchange",   // 玩家交换回合

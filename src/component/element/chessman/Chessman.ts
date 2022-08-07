@@ -1,5 +1,5 @@
-import type { CheckerBoardType } from "../checkerBoard/CheckerBoard";
-import type { Coordinate } from "../coordinate/CoordinateSystem";
+import type { Coordinate } from "../../../coordinate/CoordinateSystem";
+import type { Element } from "../Element";
 
 export type ChessmanProps = {
     coordinate: Coordinate;
@@ -15,8 +15,9 @@ export type ChessmanProps = {
  * 可以进行攻击、移动等动作。
  * 棋子进行动作时会调用 render()
  */
-export abstract class Chessman {
+export abstract class Chessman implements Element {
 
+    uuid: string;
     coordinate: Coordinate;
     private maximumealth: number;
     private health: number;
@@ -24,16 +25,17 @@ export abstract class Chessman {
     private attackRanage: number;
     private armor: number;
 
-    private checkerBoardType: CheckerBoardType;
+    private chessBoardType: string;
 
-    constructor(checkerBoardType: CheckerBoardType) {
-        this.checkerBoardType = checkerBoardType;
+    constructor(chessBoardType: string) {
+        this.chessBoardType = chessBoardType;
     }
     public abstract init(): void;
     public abstract onSelect(): void;
     public abstract onDisselect(): void;
     public abstract onPointerOver(): void;
     public abstract onPointerLeave(): void;
+    public abstract onAction(): void;
     public abstract getCodinate(): void;
 
     public abstract onStateChange(): void;

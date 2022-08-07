@@ -1,8 +1,8 @@
-import type { CheckerBoard, CheckerBoardType } from "../checkerBoard/CheckerBoard";
-import type { Coordinate } from "../coordinate/CoordinateSystem";
+import type { ChessBoard } from "../chessBoard/ChessBoard";
+import type { Coordinate } from "../../coordinate/CoordinateSystem";
 import { v4 as uuidv4 } from "uuid";
 
-export type CheckerBoardGridProps = {
+export type ChessBoardGridProps = {
     height: number;
     width: number;
     coordinate: Coordinate;
@@ -12,27 +12,26 @@ export type CheckerBoardGridProps = {
 /**
  * 棋盘格，可以点击，可以 hover
  * 棋盘格内可以有多个棋子，棋盘格本身有形状属性，根据游戏种类不同形状不同
- * 棋盘格带有地形砖块的作用
- * 合理设计是棋盘格与地形砖块隔离，目前可以合并。
- * 棋盘格本身无法移动，但是地形砖块可以。目前设计无法移动
+ * 棋盘格用于将棋盘按照坐标进行划分并承载内部元素的 ui，棋盘格本身是个虚拟单位，被销毁后内部所有元素应该同时被销毁
  */
-export abstract class CheckerBoardGrid {
+export abstract class ChessBoardGrid {
 
-    checkerBoard: CheckerBoard;
+    chessBoard: ChessBoard;
     uuid: string;
-    props: CheckerBoardGridProps;
+    props: ChessBoardGridProps;
     coordinate: Coordinate;
-    private checkerBoardType: CheckerBoardType;
+    figure: HTMLElement;
 
-    constructor(props: CheckerBoardGridProps, container: CheckerBoard) {
+    constructor(props: ChessBoardGridProps) {
         this.uuid = uuidv4();
         this.props = props;
-        this.render(container);
+        this.figure = this.getFigure(props);
     }
     public abstract init(): void;
     public abstract onClick(): void;
     public abstract onPointerOver(): void;
     public abstract onPointerLeave(): void;
+    public abstract onAction(): void;
     public abstract getCodinate(): void;
     /**
      * 获取相邻坐标
@@ -41,7 +40,7 @@ export abstract class CheckerBoardGrid {
      */
     public abstract getRelativeCoordinate(relativeCoordinate: Coordinate): Coordinate[];
     public abstract destory(): void;
-    public abstract render(container: CheckerBoard): void;
+    public abstract getFigure(props: ChessBoardGridProps): HTMLElement;
 
     public getPosition(): Coordinate {
         return this.coordinate;

@@ -1,8 +1,8 @@
-import type { CheckerBoardProps } from "../checkerBoard/CheckerBoard";
+import type { ChessBoardProps } from "../component/chessBoard/ChessBoard";
 import { CoordinateSystem } from "./CoordinateSystem";
 export class ChineseChessCoordinateSystem extends CoordinateSystem {
 
-    constructor(isFirst: boolean, boardPorps: CheckerBoardProps) {
+    constructor(isFirst: boolean, boardPorps: ChessBoardProps) {
         super();
         if (isFirst) {
             this.coordinatTransform = (origin) => origin;

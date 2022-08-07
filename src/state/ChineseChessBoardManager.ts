@@ -1,48 +1,57 @@
-import type { CheckerBoard} from "../component/checkerBoard/CheckerBoard";
-import { CheckerBoardType } from "../component/checkerBoard/CheckerBoard";
-import { ChineseChessBoard } from "../component/checkerBoard/ChineseChessBoard";
-import { ChineseChessGrid } from "../component/checkerBoardGrid/ChineseChessGrid";
-import { backgroundColor, gridColor, boardHeight, boardWidth, gridHeight, standardBoardProportion, gridWidth } from "../config/SuperChineseChess";
-import type { CheckerBoardGrids } from "./BoardManager";
+import type { ChessBoard} from "../component/chessBoard/ChessBoard";
+import { ChineseChessBoard } from "../component/chessBoard/ChineseChessBoard";
+import { ChineseChessGrid } from "../component/chessBoardGrid/ChineseChessGrid";
+import { backgroundColor, gridColor, boardHeight, boardWidth, gridHeight, standardBoardSize, gridWidth } from "../config/SuperChineseChess";
+import type { ChessBoardGrids, Chessmans } from "./BoardManager";
 import { BoardManager } from "./BoardManager";
 
 export class ChineseChessBoardManager extends BoardManager {
 
-    public createCheckerBoard(container: HTMLDivElement): void {
-
-        this.checkerBoard = new ChineseChessBoard({
-            checkerBoardType: CheckerBoardType.ChineseChess,
+    public createChessBoard(container: HTMLElement): ChessBoard {
+        const chessBoard = new ChineseChessBoard({
+            chessBoardType: "chinese-chess",
             height: boardHeight,
             width: boardWidth,
-            boardProportion: standardBoardProportion,
+            boardSize: standardBoardSize,
             backgroundColor: backgroundColor,
-        }, container);
+        });
+        container.appendChild(chessBoard.figure);
+        return chessBoard;
     }
 
-    public createCheckerBoardGrids(): void {
-        const {boardProportion} = this.checkerBoard.props;
-        // TODO const grids: CheckerBoardGrids = [];
+    public createChessBoardGrids(chessBoard: ChessBoard): ChessBoardGrids {
+        const {boardSize: boardProportion} = chessBoard.props;
+        const rowGrids: ChessBoardGrids = [];
         for (let row = 0; row < boardProportion.row; row ++) {
+            const columnGrids: ChineseChessGrid[][] = [];
             for (let column = 0; column < boardProportion.column; column ++) {
-                const grid = new ChineseChessGrid({
-                    height: gridHeight,
-                    width: gridWidth,
-                    coordinate: {
-                        x: column,
-                        y: row,
-                        z: 1,
-                    },
-                    backgroundColor: gridColor,
-                }, this.checkerBoard);
+                const layerGrids: ChineseChessGrid[] = [];
+                for (let layer = 0; layer < boardProportion.layer; layer ++) {
+                    const grid = new ChineseChessGrid({
+                        height: gridHeight,
+                        width: gridWidth,
+                        coordinate: {
+                            x: column,
+                            y: row,
+                            z: layer,
+                        },
+                        backgroundColor: gridColor,
+                    });
+                    chessBoard.figure.appendChild(grid.figure);
+                    layerGrids.push(grid);
+                }
+                columnGrids.push(layerGrids);
             }
+            rowGrids.push(columnGrids)
         }
-        throw new Error("Method not implemented.");
+        return rowGrids;
     }
-    public createChessmans(): void {
+    
+    public createChessmans(): Chessmans {
         throw new Error("Method not implemented.");
     }
 
-    public createCheckerGrid(): CheckerBoard {
+    public createChessGrid(): ChessBoard {
         throw new Error("Method not implemented.");
     }
 
@@ -50,6 +59,10 @@ export class ChineseChessBoardManager extends BoardManager {
         throw new Error("Method not implemented.");
     }
     public onEvent(): void {
+        throw new Error("Method not implemented.");
+    }
+
+    public destroy(): void {
         throw new Error("Method not implemented.");
     }
 

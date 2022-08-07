@@ -2,7 +2,7 @@
 export type Coordinate = {
     x: number;  // 列
     y: number;  // 行
-    z: number;  // 排
+    z: number;  // 层
 };
 
 /**

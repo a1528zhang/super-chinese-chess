@@ -1,4 +1,4 @@
-import type { Chessman } from "../chessman/Chessman";
+import type { Chessman } from "../component/element/chessman/Chessman";
 import type { Coordinate } from "../coordinate/CoordinateSystem";
 
 /**
